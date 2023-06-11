@@ -6,6 +6,7 @@ url: "https://ajiteshsingh.github.io"
 
 theme: minima
 markdown: kramdown
+timezone: America/Los_Angeles
 
 plugins:
   - jekyll-feed
