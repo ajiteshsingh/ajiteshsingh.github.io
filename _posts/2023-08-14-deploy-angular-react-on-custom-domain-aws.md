@@ -10,7 +10,10 @@ If you are here, I am pretty sure you already have an Angular/React application 
 
 Some prerequisites..
 
-**What is DNS(Domain Name Server) ?**![]({{ "/assets/deploy-angular-react-on-custom-domain-aws/image1.png" | relative_url }})  
+**What is DNS(Domain Name Server) ?**
+
+![]({{ "/assets/deploy-angular-react-on-custom-domain-aws/image1.png" | relative_url }})
+
 We know that each device connected to the internet has a public IP address. DNS is the phonebook of the internet. It keeps mapping of domain names to its ip address which domain names like google.com, facebook.com is easier for humans to remember than IP address which are just a sequence of numbers. **Route53** is a highly scalable DNS web service provided by AWS.
 
 **What is S3 ?**  
