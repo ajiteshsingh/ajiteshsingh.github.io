@@ -1,0 +1,11 @@
+---
+# Front matter required for Jekyll to process this SCSS file.
+# Overrides minima's default stylesheet, then adds custom rules.
+---
+
+@import "minima";
+
+// Hide the "subscribe via RSS" link in the footer for now.
+.rss-subscribe {
+  display: none;
+}
