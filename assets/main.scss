@@ -9,3 +9,9 @@
 .rss-subscribe {
   display: none;
 }
+
+// Hide the "Home" page heading and the "Posts" list heading on the home page.
+.home .page-heading,
+.home .post-list-heading {
+  display: none;
+}
