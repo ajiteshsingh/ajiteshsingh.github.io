@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Deploy Angular/React website on a custom domain using AWS S3, Cloudfront and route 53"
-date: 2023-08-14 12:00:00 -0700
+date: 2020-06-19 12:00:00 -0700
 categories: [devops, aws]
 tags: [aws, s3, cloudfront, route53, angular, react, deployment, dns]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why python recursions are too slow?"
-date: 2023-06-10 18:15:14 -0700
+date: 2021-07-03 18:15:14 -0700
 categories: [programming, performance]
 tags: [python, javascript, go, c, recursion, jit, cpython, v8]
 ---
