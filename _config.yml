@@ -8,6 +8,11 @@ theme: minima
 markdown: kramdown
 timezone: America/Los_Angeles
 
+# Control the header nav links and their order.
+header_pages:
+  - index.md
+  - publications.md
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
