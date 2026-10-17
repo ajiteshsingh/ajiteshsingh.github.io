@@ -211,6 +211,17 @@ a {
   }
 }
 
+.item-title {
+  display: block;
+  font-weight: 500;
+}
+
+.item-desc {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+}
+
 .item-meta {
   display: block;
   margin-top: 0.15rem;

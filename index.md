@@ -15,6 +15,27 @@ title: Home
 </section>
 
 <details class="accordion">
+  <summary><span>Experience</span><span class="count">3</span></summary>
+  <ul class="item-list">
+    <li>
+      <span class="item-title">Senior Software Engineer · PayPal</span>
+      <span class="item-meta">2023 – Present</span>
+      <span class="item-desc">Delivered 1 project per year.</span>
+    </li>
+    <li>
+      <span class="item-title">Software Engineer · invideo AI</span>
+      <span class="item-meta">2018 – 2021</span>
+      <span class="item-desc">Delivered 4 features per year.</span>
+    </li>
+    <li>
+      <span class="item-title">Co-Founder · edumateengg.com</span>
+      <span class="item-meta">2016 – 2018</span>
+      <span class="item-desc">Delivered an e-learning Android app from scratch.</span>
+    </li>
+  </ul>
+</details>
+
+<details class="accordion">
   <summary><span>Publications</span><span class="count">2</span></summary>
   <ul class="item-list">
     <li>
