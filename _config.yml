@@ -11,7 +11,6 @@ timezone: America/Los_Angeles
 # Control the header nav links and their order.
 header_pages:
   - index.md
-  - publications.md
 
 plugins:
   - jekyll-feed
@@ -20,3 +19,6 @@ plugins:
 # Build settings
 exclude:
   - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

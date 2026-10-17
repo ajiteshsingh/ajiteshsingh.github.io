@@ -10,8 +10,40 @@
   display: none;
 }
 
-// Hide the "Home" page heading and the "Posts" list heading on the home page.
-.home .page-heading,
-.home .post-list-heading {
+// No nav links in the site header; everything lives on the home page.
+.site-nav {
   display: none;
+}
+
+.hire-headline {
+  margin-bottom: $spacing-unit * 0.5;
+}
+
+.hire-points {
+  margin-bottom: $spacing-unit;
+}
+
+// Collapsible sections on the home page.
+.accordion {
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit * 0.5 0;
+
+  &:last-of-type {
+    border-bottom: 1px solid $grey-color-light;
+  }
+
+  summary {
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  > ul,
+  > p {
+    margin-top: $spacing-unit * 0.5;
+  }
+
+  li {
+    margin-bottom: $spacing-unit * 0.4;
+  }
 }
