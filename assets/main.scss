@@ -3,47 +3,270 @@
 # Overrides minima's default stylesheet, then adds custom rules.
 ---
 
+// Must come before any other rules in the compiled CSS.
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+
+// Minima settings, overridden before the theme is imported.
+$base-font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+$code-font-family: $base-font-family;
+$base-font-size: 15px;
+$base-line-height: 1.7;
+$content-width: 720px;
+$text-color: #18181b;
+$brand-color: #4f46e5;
+$grey-color: #71717a;
+$grey-color-light: #e4e4e7;
+
 @import "minima";
+
+// Theme colors.
+:root {
+  --bg: #ffffff;
+  --text: #18181b;
+  --muted: #71717a;
+  --border: #e4e4e7;
+  --surface: #fafafa;
+  --surface-hover: #f4f4f5;
+  --accent: #4f46e5;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+
+  &:visited {
+    color: var(--accent);
+  }
+}
 
 // Hide the "subscribe via RSS" link in the footer for now.
 .rss-subscribe {
   display: none;
 }
 
-// No nav links in the site header; everything lives on the home page.
+// Header: just the name, no nav links.
+.site-header {
+  border-top: none;
+  border-bottom: none;
+  min-height: auto;
+  padding-top: $spacing-unit;
+}
+
+.site-title,
+.site-title:visited {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
 .site-nav {
   display: none;
 }
 
+.page-content {
+  padding: $spacing-unit * 2 0 $spacing-unit * 3;
+}
+
+// Intro block on the home page.
+.intro {
+  margin-bottom: $spacing-unit * 2;
+}
+
 .hire-headline {
-  margin-bottom: $spacing-unit * 0.5;
+  font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: $spacing-unit;
 }
 
 .hire-points {
-  margin-bottom: $spacing-unit;
+  list-style: none;
+  margin: 0;
+
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+    color: var(--text);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.25rem;
+      top: 0.7em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+  }
 }
 
 // Collapsible sections on the home page.
 .accordion {
-  border-top: 1px solid $grey-color-light;
-  padding: $spacing-unit * 0.5 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
 
-  &:last-of-type {
-    border-bottom: 1px solid $grey-color-light;
+  &:hover,
+  &[open] {
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
   }
 
   summary {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.25rem;
     cursor: pointer;
-    font-size: 1.25rem;
+    list-style: none;
+    font-size: 1.05rem;
     font-weight: 600;
+    letter-spacing: 0;
+    user-select: none;
+    transition: background 0.2s ease;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      background: var(--surface-hover);
+    }
+
+    // Chevron, rotated when open.
+    &::after {
+      content: "";
+      margin-left: auto;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var(--muted);
+      border-bottom: 2px solid var(--muted);
+      transform: rotate(45deg) translateY(-3px);
+      transition: transform 0.2s ease;
+    }
   }
 
-  > ul,
-  > p {
-    margin-top: $spacing-unit * 0.5;
+  &[open] summary::after {
+    transform: rotate(225deg) translateY(-3px);
   }
+
+  .count {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.05rem 0.55rem;
+  }
+
+  &[open] > :not(summary) {
+    animation: accordion-in 0.25s ease;
+  }
+}
+
+@keyframes accordion-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 1.25rem 0.5rem;
 
   li {
-    margin-bottom: $spacing-unit * 0.4;
+    padding: 0.85rem 0;
+    border-top: 1px solid var(--border);
   }
+
+  a {
+    display: block;
+    color: var(--text);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+.item-meta {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.accordion-note {
+  margin: 0;
+  padding: 0 1.25rem 1rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+// Footer: a single quiet line.
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: $spacing-unit 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.footer-heading,
+.footer-col-3,
+.contact-list .p-name {
+  display: none;
+}
+
+.footer-col-wrapper {
+  color: var(--muted);
+}
+
+.contact-list a {
+  color: var(--muted);
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+// Post pages: headings match the home page headline.
+.post-title {
+  font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+pre,
+.highlight {
+  border-radius: 10px;
 }
