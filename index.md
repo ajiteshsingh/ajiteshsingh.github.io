@@ -9,13 +9,11 @@ title: Home
   <ul class="hire-points">
     <li>Worked across many stacks: frontend, backend, Android, ML, data pipelines, LLMs.</li>
     <li>Co-founded edumateengg.com, an edtech startup, at 19 and raised a seed round. It failed, and taught me a lot.</li>
-    <li>Recommended on LinkedIn by the CEO of invideo AI, a company valued at $600M.</li>
-    <li>Open source contributor.</li>
-  </ul>
+    <li>Recommended on LinkedIn by the CEO of invideo AI, a company valued at $600M.</li>  </ul>
 </section>
 
 <details class="accordion">
-  <summary><span>Experience</span><span class="count">3</span></summary>
+  <summary><span>Work Experience</span><span class="count">3</span></summary>
   <ul class="item-list">
     <li>
       <span class="item-title">Senior Software Engineer · PayPal</span>
